@@ -1,4 +1,12 @@
 
+
+/* \file main.cpp
+* \brief fichier main création de figure
+* \author lucas
+* \version 1.0
+*/
+
+#include "triangle.h"
 #include "rectangle.h"
 #include <string>
 using namespace std;
@@ -8,50 +16,80 @@ using namespace std;
 
 	char restart;
 
-	cout << "	Voulez-vous créer un nouvel objet?"<<endl;
-	cout <<  "	y/n" << endl;
+	cout << " Voulez-vous créer un nouvel objet?"<<endl;
+	cout <<  " y/n" << endl;
 	cin >> restart ;
 
+/* brief boucle de création d'objet
+* 
+* dans cette boucle on crée un nouvel objet après confirmation de l'utilisateur
+*/
 	if (restart == 'y'){
 	do {
-	cout << "	création du nouvel objet :" << endl;
+	cout << " création du nouvel objet :" << endl;
 	string name_object;
 	cin >> name_object;
+/* brief choix du type d'objet puis sélection dans une boucle switch
+*/
 
-	cout << "	choisir le type de figure : rentrer le numéro de la figure choisie" << endl;
-	cout << "	1) rectangle" <<endl;
-	cout << "	2) triangle" << endl;
-	cout << "	3) disque" << endl;
+	cout << " choisir le type de figure : rentrer le numéro de la figure choisie" << endl;
+	cout << " 1) rectangle" <<endl;
+	cout << " 2) triangle" << endl;
+	cout << " 3) disque" << endl;
 
 	int select;
 	cin >> select;
 	switch(select){
+
+/*
+* \brief cas 1 = creation d'un rectangle
+* \details instanciation rectangle puis utilisation des methodes 
+* pour renvoyer le perimetre et la surface
+*/
 	case 1:{
 
 	float X, Y;
 	rectangle object;
-	cout << "	longueur rectangle " << name_object <<"  :" << endl;
+	cout << " longueur rectangle " << name_object <<"  :" << endl;
 	cin >> X;
-	cout << "	largeur rectangle " << name_object <<"  :" << endl;
+	cout << " largeur rectangle " << name_object <<"  :" << endl;
 	cin >> Y;
 
 	object.Setlongueur(X);
 	object.Setlargeur(Y);
 
-	cout << "	perimetre de " << name_object <<" = "<< object.getPerimetre() << endl;
-	cout << "	surface de "<< name_object <<" = "<< object.getSurface() << endl;
+	cout << " perimetre de " << name_object <<" = "<< object.getPerimetre() << endl;
+	cout << " surface de "<< name_object <<" = "<< object.getSurface() << endl;
 	}
 	break;
-	case 2:{ cout << "	nothing yet"<< endl;}
 
+/*
+* \brief cas 2 : création d'un triangle
+* \details création du triangle avec 3 côtés puis utilisationd des methodes 
+* afin de renvoyer le perimetre et la surface.
+*/
+	case 2: {
+
+	float A, B, C;
+	triangle object;
+	cout << " 1er côté triangle " << name_object <<"  :"<<endl;
+	cin >> A;
+	cout << " 2eme côté triangle " << name_object <<"  :"<<endl;
+	cin >> B;
+	cout << " 3eme côté triangle " << name_object <<"  :"<<endl;
+	cin >> C;
+	object.Setcotes(A,B,C);
+	cout <<" perimetre de "<< name_object<<" = "<< object.getPerimetre() <<endl;
+	cout <<" surface de "<< name_object<<" = "<< object.getSurface() <<endl;
+
+	}
 	break;
-}
-	cout <<"	do you want to create a new figure ? " << endl;
+	cout <<" do you want to create a new figure ? " << endl;
 	cin >> restart;
 
-} while (restart == 'y');
+}} while (restart == 'y');
 }
-	cout << "	fin programme" << endl;
+	cout << " fin programme" << endl;
 	return 0;
 }
 
