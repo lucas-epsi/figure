@@ -1,0 +1,5 @@
+<map id="figure" name="figure">
+<area shape="rect" id="node2" href="$classdisque.html" title="classe de definition d&#39;une figure disque " alt="" coords="5,80,71,107"/>
+<area shape="rect" id="node3" href="$classrectangle.html" title="rectangle" alt="" coords="95,80,178,107"/>
+<area shape="rect" id="node4" href="$classtriangle.html" title="triangle" alt="" coords="202,80,274,107"/>
+</map>
