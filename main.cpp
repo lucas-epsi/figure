@@ -5,7 +5,7 @@
 * \author lucas
 * \version 1.0
 */
-
+#include "disque.h"
 #include "triangle.h"
 #include "rectangle.h"
 #include <string>
@@ -67,15 +67,28 @@ using namespace std;
 
 	float A, B, C;
 	triangle object;
-	cout << " 1er côté triangle " << name_object <<"  :"<<endl;
+	cout << " Entrez 1er côté triangle " << name_object <<"  :"<<endl;
 	cin >> A;
-	cout << " 2eme côté triangle " << name_object <<"  :"<<endl;
+	cout << " Entrez 2eme côté triangle " << name_object <<"  :"<<endl;
 	cin >> B;
-	cout << " 3eme côté triangle " << name_object <<"  :"<<endl;
+	cout << " Entrez 3eme côté triangle " << name_object <<"  :"<<endl;
 	cin >> C;
 	object.Setcotes(A,B,C);
 	cout <<" perimetre de "<< name_object<<" = "<< object.getPerimetre() <<endl;
 	cout <<" surface de "<< name_object<<" = "<< object.getSurface() <<endl;
+	}
+	break;
+
+	case 3: {
+
+	float A;
+	disque object;
+	cout << " Entrez rayon du disque " << name_object <<"  :"<<endl;
+	cin >> A;
+	object.setRayon(A);
+	cout <<" perimetre de "<< name_object<<" = "<< object.getPerimetre() << endl;
+	cout <<" surface de "<< name_object<<" = "<< object.getSurface() << endl;
+
 	}
 	break;
 
