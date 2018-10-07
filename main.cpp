@@ -14,18 +14,14 @@ using namespace std;
  int main(){
 
 
-	char restart;
-
-	cout << " Voulez-vous créer un nouvel objet?"<<endl;
-	cout <<  " y/n" << endl;
-	cin >> restart ;
-
-/* brief boucle de création d'objet
-* 
+/* \brief boucle de création d'objet
+*
 * dans cette boucle on crée un nouvel objet après confirmation de l'utilisateur
 */
-	if (restart == 'y'){
+	char start;
+
 	do {
+	cout <<endl;
 	cout << " création du nouvel objet :" << endl;
 	string name_object;
 	cin >> name_object;
@@ -33,14 +29,13 @@ using namespace std;
 */
 
 	cout << " choisir le type de figure : rentrer le numéro de la figure choisie" << endl;
-	cout << " 1) rectangle" <<endl;
-	cout << " 2) triangle" << endl;
-	cout << " 3) disque" << endl;
-
+	cout << " 1) Rectangle" <<endl;
+	cout << " 2) Triangle" << endl;
+	cout << " 3) Disque" << endl;
+	cout << " 4) Exit Menu " <<endl;
 	int select;
 	cin >> select;
 	switch(select){
-
 /*
 * \brief cas 1 = creation d'un rectangle
 * \details instanciation rectangle puis utilisation des methodes 
@@ -81,14 +76,18 @@ using namespace std;
 	object.Setcotes(A,B,C);
 	cout <<" perimetre de "<< name_object<<" = "<< object.getPerimetre() <<endl;
 	cout <<" surface de "<< name_object<<" = "<< object.getSurface() <<endl;
-
 	}
 	break;
-	cout <<" do you want to create a new figure ? " << endl;
-	cin >> restart;
 
-}} while (restart == 'y');
+	case 4: { cout << " pas d'objet créé ..." << endl;}
+	break;
 }
+	cout <<endl;
+	cout << "créer nouvel objet?"<<endl;
+	cout << "y/n" << endl;
+	cin >> start;
+} while (start=='y'||start=='Y');
+
 	cout << " fin programme" << endl;
 	return 0;
 }
